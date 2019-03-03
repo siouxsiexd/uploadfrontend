@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 const dragActive = css`
   border-color: #78e5d5;
@@ -21,7 +21,16 @@ export const DropContainer = styled.div.attrs({
   ${props => props.isDragReject && dragReject};
 `;
 
+const messageColors = {
+  default: "#999",
+  error: "#e57878",
+  sucess: "#78e5d5"
+};
 
 export const UploadMessage = styled.p`
-
+  display: flex;
+  color: ${props => messageColors[props.type || "default"]};
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
 `;
